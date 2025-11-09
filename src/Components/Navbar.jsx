@@ -30,7 +30,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     <img className='w-[45px]' src={userImg} alt="" />
-    <Link className='hover:text-[#f72585] hover:font-bold'>Login</Link>
+    <Link to='/login' className='hover:text-[#f72585] hover:font-bold'>Login</Link>
     <span className='p-2'>/</span>
     <Link className='hover:text-[#f72585] hover:font-bold'>Register</Link>
   </div>
