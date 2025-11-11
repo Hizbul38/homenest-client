@@ -3,13 +3,13 @@ import { Outlet } from 'react-router';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import Banner from '../Components/Home/Banner';
-import PopularCities from '../Components/Home/PopularCities';
-import ChooseUs from '../Components/Home/ChooseUs';
-import Testimonials from '../Components/Home/Testimonials';
+import PropertyTypes from '../Components/Home/PropertyTypes';
+import AboutUs from '../Components/Home/AboutUs';
+import ChooseUsSection from '../Components/Home/ChooseUsSection';
 
 const HomeLayout = () => {
     return (
-        <div>
+        <div className='w-10/12 mx-auto'>
             <header>
                 <Navbar></Navbar>
             <Banner></Banner>
@@ -17,9 +17,9 @@ const HomeLayout = () => {
             <main>
                 <Outlet></Outlet>
             </main>
-            <PopularCities></PopularCities>
-            <ChooseUs></ChooseUs>
-            <Testimonials></Testimonials>
+            <PropertyTypes></PropertyTypes>
+            <AboutUs></AboutUs>
+            <ChooseUsSection></ChooseUsSection>
             <footer>
                 <Footer></Footer>
             </footer>

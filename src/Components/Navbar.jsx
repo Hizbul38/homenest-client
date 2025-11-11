@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-primary font-semibold" : "hover:text-primary"
+            isActive ? "text-primary font-semibold" : "hover:text-primary text-white"
           }
         >
           Home
@@ -29,7 +29,7 @@ const Navbar = () => {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "text-primary font-semibold" : "hover:text-primary"
+            isActive ? "text-primary font-semibold" : "hover:text-primary text-white"
           }
         >
           About
@@ -39,7 +39,7 @@ const Navbar = () => {
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            isActive ? "text-primary font-semibold" : "hover:text-primary"
+            isActive ? "text-primary font-semibold" : "hover:text-primary text-white"
           }
         >
           Contact
@@ -49,7 +49,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50 px-5">
+    <div className="navbar bg-[#0b1c48] sticky top-0 z-50 px-5">
       {/* Left section */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -59,7 +59,7 @@ const Navbar = () => {
               className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              stroke="green"
             >
               <path
                 strokeLinecap="round"
@@ -71,12 +71,12 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow gap-1"
+            className="menu menu-sm dropdown-content bg-black rounded-box mt-3 w-52 p-2 shadow gap-1"
           >
             {navLinks}
           </ul>
         </div>
-        <Link to="/" className=" btn-ghost text-xl font-bold text-primary">
+        <Link to="/" className=" btn-ghost text-xl font-bold text-white">
           🏡 HomeNest
         </Link>
       </div>
@@ -123,18 +123,18 @@ const Navbar = () => {
             <img
               src={userIcon}
               alt="Default User"
-              className="w-[60px] h-[40px]"
+              className="w-[65px] h-[40px]"
             />
             <Link
               to="/auth/login"
-              className="hover:text-[#f72585] hover:font-bold"
+              className="text-white hover:text-[#f72585] hover:font-bold"
             >
               Login
             </Link>
             <span className="text-gray-500">/</span>
             <Link
               to="/auth/register"
-              className="hover:text-[#f72585] hover:font-bold"
+              className="hover:text-[#f72585] text-white hover:font-bold"
             >
               Register
             </Link>
