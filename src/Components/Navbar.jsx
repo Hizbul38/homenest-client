@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
-import userImg from '../assets/user1.png'
+import userIcon from '../assets/user1.png'
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+  const {user, LogOut} = use(AuthContext);
+  const handleLogOut=()=>{
+    console.log('user try to logout')
+    LogOut().then(() => {
+}).catch((error) => {
+  console.log(error);
+});
+  }
     return (
         <div>
             <div className="navbar bg-base-100 shadow-sm">
@@ -19,7 +28,7 @@ const Navbar = () => {
         <NavLink>Contact</NavLink>
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <Link to='/' className="btn btn-ghost text-xl">daisyUI</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-5">
@@ -29,10 +38,11 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <img className='w-[45px]' src={userImg} alt="" />
-    <Link to='/login' className='hover:text-[#f72585] hover:font-bold'>Login</Link>
-    <span className='p-2'>/</span>
-    <Link className='hover:text-[#f72585] hover:font-bold'>Register</Link>
+    <img className='w-[45px]' src={userIcon} alt="" />
+    {user ? (<button onClick={handleLogOut} className='hover:text-[#f72585] hover:font-bold mr-1 text-black'>Logout</button>) : (<Link to='/auth/login' className='hover:text-[#f72585] hover:font-bold mr-2'>Login</Link>)}
+    
+    {/* /
+    <Link to='/auth/register' className='hover:text-[#f72585] hover:font-bold ml-2'>Register</Link> */}
   </div>
 </div>
         </div>

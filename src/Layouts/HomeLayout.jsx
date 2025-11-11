@@ -10,13 +10,19 @@ import Testimonials from '../Components/Home/Testimonials';
 const HomeLayout = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            <header>
+                <Navbar></Navbar>
             <Banner></Banner>
-            <Outlet></Outlet>
+            </header>
+            <main>
+                <Outlet></Outlet>
+            </main>
             <PopularCities></PopularCities>
             <ChooseUs></ChooseUs>
             <Testimonials></Testimonials>
-            <Footer></Footer>
+            <footer>
+                <Footer></Footer>
+            </footer>
         </div>
     );
 };
