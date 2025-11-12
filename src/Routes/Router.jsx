@@ -11,6 +11,7 @@ import AlProperties from "../Pages/AllProperties";
 import AddProperties from "../Pages/AddProperties";
 import PrivateRoute from "./PrivateRoute";
 import PropertyDetails from "../Components/PropertyDetails";
+import MyProperties from "../Pages/MyProperties";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,14 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:3000/properties/${params.id}`),
       },
+      {
+        path: "/my-properties",
+        element: (
+          <PrivateRoute>
+           <MyProperties></MyProperties>
+         </PrivateRoute>
+  ),
+},
     ],
   },
   {
