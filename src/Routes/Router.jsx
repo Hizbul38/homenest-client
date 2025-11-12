@@ -8,6 +8,9 @@ import Contact from "../Pages/Contact";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AlProperties from "../Pages/AllProperties";
+import AddProperties from "../Pages/AddProperties";
+import PrivateRoute from "./PrivateRoute";
+import PropertyDetails from "../Components/PropertyDetails";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,24 @@ const router = createBrowserRouter([
         path: "/all-properties",
         element:<AlProperties></AlProperties>,
         loader:() => fetch('http://localhost:3000/properties')
+      },
+      {
+        path: "/add-properties",
+        element:(
+          <PrivateRoute>
+            <AddProperties></AddProperties>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path:"/property/:id",
+        element: (
+          <PrivateRoute>
+            <PropertyDetails></PropertyDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/properties/${params.id}`),
       },
     ],
   },

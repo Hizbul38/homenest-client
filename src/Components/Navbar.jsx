@@ -55,6 +55,16 @@ const Navbar = () => {
           All Properties
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/add-properties"
+          className={({ isActive }) =>
+            isActive ? "text-primary font-semibold" : "hover:text-primary text-white"
+          }
+        >
+          Add Properties
+        </NavLink>
+      </li>
     </>
   );
 
