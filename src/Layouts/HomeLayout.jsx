@@ -9,17 +9,13 @@ import ChooseUsSection from '../Components/Home/ChooseUsSection';
 
 const HomeLayout = () => {
     return (
-        <div className='w-10/12 mx-auto'>
+        <div className='w-11/12 mx-auto'>
             <header>
                 <Navbar></Navbar>
-            <Banner></Banner>
             </header>
             <main>
                 <Outlet></Outlet>
             </main>
-            <PropertyTypes></PropertyTypes>
-            <AboutUs></AboutUs>
-            <ChooseUsSection></ChooseUsSection>
             <footer>
                 <Footer></Footer>
             </footer>

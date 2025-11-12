@@ -1,64 +1,87 @@
-import React, { createContext, useEffect, useState } from 'react';
-import app from '../firebase/firebase.config';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
-import Swal from 'sweetalert2';
+import React, { createContext, useEffect, useState } from "react";
+import app from "../firebase/firebase.config";
+import {
+  getAuth,
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+import Swal from "sweetalert2";
 
-export const AuthContext=createContext();
+export const AuthContext = createContext();
 
 const auth = getAuth(app);
-const AuthProvider = ({children}) => {
-    const [user, setUser] = useState(null);
+const googleProvider = new GoogleAuthProvider();
 
+const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
 
-    console.log(user)
+  // ✅ Create new user
+  const createUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
+  // ✅ Email/Password Sign In
+  const signIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password).then((result) => {
+      Swal.fire({
+        title: "Success!",
+        text: "Logged in successfully!",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+      return result;
+    });
+  };
 
-    const createUser =(email,password) => {
-    return createUserWithEmailAndPassword(auth,email,password)
-    };
+  // ✅ Google Sign In
+  const googleLogin = () => {
+    return signInWithPopup(auth, googleProvider).then((result) => {
+      Swal.fire({
+        title: "Welcome!",
+        text: "Logged in with Google!",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+      return result;
+    });
+  };
 
-    const signIn =(email,password) =>{
-        Swal.fire({
-  title: 'Success!',
-  text: 'Login',
-  icon: 'success',
-  confirmButtonText: 'OK'
-});
+  // ✅ Logout
+  const LogOut = () => {
+    return signOut(auth).then(() => {
+      Swal.fire({
+        title: "Success!",
+        text: "You have logged out!",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+    });
+  };
 
+  // ✅ Track Current User
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
-        return signInWithEmailAndPassword(auth, email,password);
-    }
+  const authData = {
+    user,
+    setUser,
+    createUser,
+    signIn,
+    googleLogin,
+    LogOut,
+  };
 
-    const LogOut=()=>{
-        Swal.fire({
-  title: 'Success!',
-  text: 'Logout',
-  icon: 'success',
-  confirmButtonText: 'OK'
-});
-        return signOut(auth);
-    };
-
-
-    useEffect(()=>{
-     const unsubscribe=   onAuthStateChanged(auth, (currentUser)=>{
-        setUser(currentUser);
-        });
-        return ()=>{
-            unsubscribe();
-        };
-    },[])
-
-
-    const authData={
-        user,
-        setUser,
-        createUser,
-        LogOut,
-        signIn,
-    }
-    return <AuthContext value={authData}>{children}</AuthContext>;
+  return (
+    <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>
+  );
 };
 
 export default AuthProvider;
