@@ -17,8 +17,10 @@ const ChooseUsSection = () => {
             Let’s Find the Right <br /> Selling Option for You
           </h2>
           <p className="text-gray-500 mb-6 max-w-md">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Choosing HomeNest means choosing trust, convenience, and modern real estate solutions built for Bangladesh. We understand that finding the perfect home or property is more than a transaction — it’s about peace of mind and a better future.
+            <br />
+            <br />
+            Here’s why thousands of users choose HomeNest:
           </p>
 
           <ul className="space-y-3 mb-8">
@@ -38,6 +40,24 @@ const ChooseUsSection = () => {
               <FaCheckCircle className="text-orange-500 text-lg" />
               <span className="text-gray-700 font-medium">
                 List Your Own Property
+              </span>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaCheckCircle className="text-orange-500 text-lg" />
+              <span className="text-gray-700 font-medium">
+                Verified Properties
+              </span>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaCheckCircle className="text-orange-500 text-lg" />
+              <span className="text-gray-700 font-medium">
+                Secure & Transparent Deals
+              </span>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaCheckCircle className="text-orange-500 text-lg" />
+              <span className="text-gray-700 font-medium">
+                Affordable & Reliable
               </span>
             </li>
           </ul>

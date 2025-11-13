@@ -22,7 +22,7 @@ const AddProperties = () => {
     };
 
     // ✅ MongoDB তে property পাঠানো
-    fetch("http://localhost:3000/properties", {
+    fetch("https://homenest-server-lilac.vercel.app/properties", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newProperty),

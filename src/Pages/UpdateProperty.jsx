@@ -12,7 +12,7 @@ const UpdateProperty = () => {
 
   // ✅ Fetch single property data from MongoDB
   useEffect(() => {
-    fetch(`http://localhost:3000/properties/${id}`)
+    fetch(`https://homenest-server-lilac.vercel.app/properties/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProperty(data);

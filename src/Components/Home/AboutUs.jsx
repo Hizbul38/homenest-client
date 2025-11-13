@@ -52,16 +52,17 @@ const AboutUs = () => {
         {/* Right Content Section */}
         <div className="text-start md:pl-5 mt-10 md:mt-0">
           <p className="uppercase text-sm text-orange-500 font-medium mb-2 tracking-wide">
-            About Home Unik
+            About Homenest
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#1f2937] mb-5 leading-snug">
             The Leading Real Estate <br /> About Marketplace.
           </h2>
-          <p className="text-gray-500 mb-6 max-w-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            consectetur adipiscing elit
-          </p>
+          <p className="text-gray-500 mb-6 max-w-lg">HomeNest is a trusted real estate platform designed to make buying, selling, and renting properties in Bangladesh simple, secure, and transparent. Our mission is to connect property owners, buyers, and tenants in one easy-to-use digital space — saving time, effort, and unnecessary hassle.
+            <br />
+            <br />
+
+We provide a wide range of verified listings, from luxury apartments in Dhaka to affordable homes in small towns, ensuring every user finds their ideal property. HomeNest values trust, transparency, and convenience — that’s why we verify every property and make sure all information is accurate and up to date.
+</p>
 
           {/* Feature Icons */}
           <div className="grid grid-cols-2 gap-5 mb-8">

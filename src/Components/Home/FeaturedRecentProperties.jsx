@@ -9,7 +9,7 @@ const FeaturedRecentProperties = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/properties/recent") // তোমার API অনুযায়ী পরিবর্তন করো
+    fetch("https://homenest-server-lilac.vercel.app/properties/recent") // তোমার API অনুযায়ী পরিবর্তন করো
       .then((res) => res.json())
       .then((data) => setProperties(data))
       .catch((err) => console.error(err));

@@ -8,18 +8,18 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center min-h-screen">
         <span className="loading loading-spinner text-orange-500 loading-lg"></span>
       </div>
     );
   }
 
   if (!user) {
+    // 🔸 Login না থাকলে redirect করবে login page এ এবং from হিসেবে বর্তমান route পাঠাবে
     return <Navigate to="/auth/login" state={{ from: location }} replace />;
   }
 
   return children;
 };
-
 
 export default PrivateRoute;

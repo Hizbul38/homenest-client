@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import PropertyDetails from "../Components/PropertyDetails";
 import MyProperties from "../Pages/MyProperties";
 import UpdateProperty from "../Pages/UpdateProperty";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -89,7 +90,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>Error</div>,
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

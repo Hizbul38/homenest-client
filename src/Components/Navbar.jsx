@@ -79,7 +79,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#0b1c48] sticky top-0 z-50 px-5">
+    <div className="navbar bg-[#0b1c48] sticky top-0 z-50 lg:px-5">
       {/* Left section */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -106,7 +106,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <Link to="/" className=" btn-ghost text-xl font-bold text-white">
+        <Link to="/" className=" md:text-2xl font-bold text-white">
           🏡 HomeNest
         </Link>
       </div>
@@ -117,14 +117,14 @@ const Navbar = () => {
       </div>
 
       {/* Right section */}
-      <div className="navbar-end relative flex items-center gap-1">
+      <div className="navbar-end relative flex items-center gap-1 ">
         {user ? (
           <div className="relative">
             {/* ✅ Show logged in user photo */}
             <img
               src={user.photoURL || userIcon}
               alt="User"
-              className="w-[45px] h-[45px] rounded-full border cursor-pointer"
+              className="w-[40px] h-[40px] rounded-full border cursor-pointer"
               onClick={() => setDropdownOpen(!dropdownOpen)}
               title={user.displayName || user.email}
             />
