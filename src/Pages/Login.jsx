@@ -9,7 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // 🔸 Protected route থেকে আসলে সেটার path রাখবে
+
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (e) => {
@@ -22,7 +22,7 @@ const Login = () => {
       .then((result) => {
         setUser(result.user);
         Swal.fire("Success!", "Logged in successfully!", "success");
-        navigate(from, { replace: true }); // ✅ Redirect to desired route
+        navigate(from, { replace: true });
       })
       .catch((error) => Swal.fire("Error", error.message, "error"));
   };
@@ -32,7 +32,7 @@ const Login = () => {
       .then((result) => {
         setUser(result.user);
         Swal.fire("Success!", "Logged in with Google!", "success");
-        navigate(from, { replace: true }); // ✅ Redirect to desired route
+        navigate(from, { replace: true });
       })
       .catch((error) => Swal.fire("Error", error.message, "error"));
   };

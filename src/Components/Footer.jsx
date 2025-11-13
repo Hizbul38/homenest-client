@@ -8,9 +8,10 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="relative bg-[#0b1c48] text-white mt-20 rounded-t-3xl overflow-hidden">
-      {/* ✅ Main Footer Content */}
       <div className="pt-20 pb-10 px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 z-10 relative">
+        
         {/* Logo & Social */}
+
         <div>
           <Link to='/' className="text-2xl font-bold text-orange-500 mb-3 flex items-center gap-2">
             🏠 HomeNest
@@ -56,6 +57,7 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
+
         <div>
           <h3 className="text-lg font-semibold mb-3">Contact Info</h3>
           <p className="flex items-center gap-3 mb-2 text-gray-300">
@@ -73,6 +75,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
+
         <div>
           <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-gray-300">
@@ -95,6 +98,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter / Appointment */}
+
         <div>
           <h3 className="text-lg font-semibold mb-3">Stay Updated</h3>
           <p className="text-gray-300 mb-4">
@@ -114,6 +118,7 @@ const Footer = () => {
       </div>
 
       {/* ✅ Bottom Footer */}
+      
       <div className="border-t border-gray-700 py-5 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 px-6 md:px-12">
         <p>© {new Date().getFullYear()} HomeNest. All rights reserved.</p>
         <div className="flex gap-5 mt-2 md:mt-0">

@@ -80,7 +80,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-[#0b1c48] sticky top-0 z-50 lg:px-5">
+      
       {/* Left section */}
+
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -112,6 +114,7 @@ const Navbar = () => {
       </div>
 
       {/* Center section */}
+
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-5">{navLinks}</ul>
       </div>
@@ -120,7 +123,9 @@ const Navbar = () => {
       <div className="navbar-end relative flex items-center gap-1 ">
         {user ? (
           <div className="relative">
-            {/* ✅ Show logged in user photo */}
+
+            {/*Show logged in user photo */}
+
             <img
               src={user.photoURL || userIcon}
               alt="User"
@@ -128,7 +133,9 @@ const Navbar = () => {
               onClick={() => setDropdownOpen(!dropdownOpen)}
               title={user.displayName || user.email}
             />
+            
             {/* Dropdown */}
+
             {dropdownOpen && (
               <div
                 className="absolute right-0 mt-3 w-56 bg-white border rounded-lg shadow-lg p-4 z-50"
@@ -149,7 +156,9 @@ const Navbar = () => {
           </div>
         ) : (
           <>
+          
             {/* ✅ Default user icon + Login/Register */}
+
             <img
               src={userIcon}
               alt="Default User"

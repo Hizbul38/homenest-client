@@ -4,7 +4,9 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 const Contact = () => {
   return (
     <section className="py-20 px-6 md:px-12 bg-gray-50">
+
       {/* Heading */}
+
       <div className="text-center mb-14">
         <p className="uppercase text-sm text-orange-500 font-medium tracking-wide">
           Get in Touch
@@ -18,8 +20,11 @@ const Contact = () => {
       </div>
 
       {/* Contact Section */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
         {/* Left Side - Contact Info */}
+
         <div className="bg-white rounded-3xl shadow-md p-8 space-y-8">
           <div className="flex items-start gap-4">
             <div className="bg-orange-500 text-white p-4 rounded-full text-xl">
@@ -53,6 +58,7 @@ const Contact = () => {
         </div>
 
         {/* Right Side - Contact Form */}
+
         <div className="bg-white rounded-3xl shadow-md p-8">
           <form className="space-y-5">
             <div>
@@ -105,6 +111,7 @@ const Contact = () => {
       </div>
 
       {/* Google Map Section */}
+      
       <div className="mt-20 rounded-3xl overflow-hidden shadow-md">
         <iframe
           title="Google Map"

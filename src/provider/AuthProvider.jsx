@@ -19,12 +19,14 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  // ✅ Create new user
+  // Create new user
+  
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  // ✅ Email/Password Sign In
+  // Email/Password Sign In
+
   const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password).then((result) => {
       Swal.fire({
@@ -37,7 +39,8 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  // ✅ Google Sign In
+  // Google Sign In
+
   const googleLogin = () => {
     return signInWithPopup(auth, googleProvider).then((result) => {
       Swal.fire({
@@ -50,7 +53,8 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  // ✅ Logout
+  // Logout
+
   const LogOut = () => {
     return signOut(auth).then(() => {
       Swal.fire({
@@ -62,7 +66,8 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  // ✅ Track Current User
+  // Track Current User
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);

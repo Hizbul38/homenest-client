@@ -8,7 +8,7 @@ const MyProperties = () => {
   const [myProperties, setMyProperties] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Fetch logged-in user's properties
+
   useEffect(() => {
     if (user?.email) {
       fetch(`https://homenest-server-lilac.vercel.app/properties?email=${user.email}`)
@@ -24,7 +24,8 @@ const MyProperties = () => {
     }
   }, [user]);
 
-  // ✅ Handle Delete Property
+  // Handle Delete Property
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -91,6 +92,7 @@ const MyProperties = () => {
                 </p>
 
                 <div className="flex justify-between mt-3">
+
                   {/* View Details */}
                   <Link
                     to={`/property/${property._id}`}
@@ -100,6 +102,7 @@ const MyProperties = () => {
                   </Link>
 
                   {/* Update */}
+
                   <Link
                     to={`/update-property/${property._id}`}
                     className="btn btn-sm bg-blue-500 text-white hover:bg-blue-600"
@@ -108,6 +111,7 @@ const MyProperties = () => {
                   </Link>
 
                   {/* Delete */}
+                  
                   <button
                     onClick={() => handleDelete(property._id)}
                     className="btn btn-sm bg-red-500 text-white hover:bg-red-600"

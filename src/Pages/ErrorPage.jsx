@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 const ErrorPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#0b1c48] to-[#091736] text-white px-6 text-center">
+      
       {/* Animated 404 */}
+
       <motion.h1
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -16,6 +18,7 @@ const ErrorPage = () => {
       </motion.h1>
 
       {/* Subtitle */}
+
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -26,6 +29,7 @@ const ErrorPage = () => {
       </motion.h2>
 
       {/* Description */}
+
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -37,6 +41,7 @@ const ErrorPage = () => {
       </motion.p>
 
       {/* Back Button */}
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -51,6 +56,7 @@ const ErrorPage = () => {
       </motion.div>
 
       {/* Floating Shapes for Motion Effect */}
+      
       <motion.div
         animate={{
           y: [0, -10, 0],

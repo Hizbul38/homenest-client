@@ -9,6 +9,7 @@ const About = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         
         {/* Left Side Image */}
+        
         <div className="relative">
           <img
             src={aboutImg}
@@ -25,6 +26,7 @@ const About = () => {
         </div>
 
         {/* Right Side Content */}
+
         <div>
           <p className="uppercase text-sm font-medium text-orange-500 mb-2 tracking-wide">
             About Home Unik

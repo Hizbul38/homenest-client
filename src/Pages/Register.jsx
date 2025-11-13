@@ -21,6 +21,7 @@ const Register = () => {
     const password = form.password.value;
 
     // Password validation
+    
     if (!/(?=.*[A-Z])/.test(password))
       return Swal.fire("Error", "Must have an uppercase letter", "error");
     if (!/(?=.*[a-z])/.test(password))
@@ -37,7 +38,7 @@ const Register = () => {
         }).then(() => {
           setUser({ ...user, displayName: name, photoURL: photo });
           Swal.fire("Success!", "Registration Successful!", "success");
-          navigate(from, { replace: true }); // ✅ Redirect to desired route
+          navigate(from, { replace: true }); 
         });
       })
       .catch((error) => Swal.fire("Error", error.message, "error"));
@@ -48,7 +49,7 @@ const Register = () => {
       .then((result) => {
         setUser(result.user);
         Swal.fire("Success!", "Logged in with Google!", "success");
-        navigate(from, { replace: true }); // ✅ Redirect to desired route
+        navigate(from, { replace: true });
       })
       .catch((error) => Swal.fire("Error", error.message, "error"));
   };

@@ -22,7 +22,6 @@ const PropertyDetails = () => {
     );
   }
 
-  // ✅ Destructure (update field names)
   const {
     propertyName,
     description,
@@ -35,12 +34,11 @@ const PropertyDetails = () => {
     postedDate,
   } = property;
 
-  // ✅ Fix: use postedDate instead of createdAt
   const formattedDate = postedDate
     ? new Date(postedDate).toLocaleDateString("en-GB")
     : "N/A";
 
-  // ✅ Handle review submit
+
   const handleReview = (e) => {
     e.preventDefault();
     if (!rating) return toast.error("Please select a rating!");
@@ -61,7 +59,9 @@ const PropertyDetails = () => {
   return (
     <div className="min-h-screen bg-base-200 py-16 px-5 md:px-20 font-poppins">
       <div className="max-w-5xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden">
+
         {/* Property Image */}
+
         <div className="relative">
           <img
             src={image}
@@ -75,8 +75,11 @@ const PropertyDetails = () => {
         </div>
 
         {/* Content */}
+
         <div className="p-8 md:p-12">
+
           {/* Property Info */}
+
           <div className="flex flex-wrap gap-3 mb-5 text-sm text-gray-600">
             <div className="flex items-center gap-2">
               <FaTag className="text-orange-500" /> <span>{category}</span>
@@ -94,6 +97,7 @@ const PropertyDetails = () => {
           <p className="text-gray-700 leading-relaxed mb-6">{description}</p>
 
           {/* ✅ Fixed Posted By Section */}
+
           <div className="bg-base-100 rounded-xl p-5 shadow-inner mb-10">
             <h3 className="text-lg font-semibold mb-2 text-gray-800">
               Posted By
@@ -121,13 +125,15 @@ const PropertyDetails = () => {
             </div>
           </div>
 
-          {/* ⭐ Ratings & Reviews Section */}
+          {/* Ratings & Reviews Section */}
+
           <div className="mt-10">
             <h2 className="text-2xl font-bold mb-4 text-gray-800">
               Ratings & Reviews
             </h2>
 
             {/* Rating input */}
+
             <form
               onSubmit={handleReview}
               className="bg-base-100 p-5 rounded-xl shadow-sm mb-6"
@@ -158,6 +164,7 @@ const PropertyDetails = () => {
             </form>
 
             {/* Show reviews */}
+            
             <div className="space-y-4">
               {reviews.length === 0 ? (
                 <p className="text-gray-500 italic">No reviews yet.</p>

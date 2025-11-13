@@ -8,9 +8,8 @@ const AllProperties = () => {
   const [order, setOrder] = useState("asc");
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
-  const searchRef = useRef(null); // ✅ fix cursor flicker
+  const searchRef = useRef(null);
 
-  // ✅ Debounce Search (delay API call)
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearch(search.trim());
@@ -18,7 +17,6 @@ const AllProperties = () => {
     return () => clearTimeout(timer);
   }, [search]);
 
-  // ✅ Fetch properties (only when sort/filter/search changes)
   useEffect(() => {
     let ignore = false;
     setLoading(true);
@@ -54,7 +52,9 @@ const AllProperties = () => {
 
   return (
     <div className="w-11/12 mx-auto py-12">
+
       {/* Title */}
+
       <div className="text-center mb-10">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
           All Properties
@@ -64,9 +64,12 @@ const AllProperties = () => {
         </p>
       </div>
 
-      {/* ✅ Search + Sort Controls */}
+      {/* Search + Sort Controls */}
+
       <div className="flex flex-wrap justify-center gap-4 mb-10">
-        {/* 🔍 Search Box */}
+
+        {/* Search Box */}
+
         <div className="relative">
           <input
             ref={searchRef}
@@ -82,6 +85,7 @@ const AllProperties = () => {
         </div>
 
         {/* Sort by field */}
+        
         <select
           onChange={(e) => setSortBy(e.target.value)}
           value={sortBy}
@@ -94,6 +98,7 @@ const AllProperties = () => {
         </select>
 
         {/* Sort order */}
+
         <select
           onChange={(e) => setOrder(e.target.value)}
           value={order}
@@ -105,6 +110,7 @@ const AllProperties = () => {
       </div>
 
       {/* Property Grid */}
+
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
         {properties.length === 0 ? (
           <p className="col-span-full text-center text-gray-500">

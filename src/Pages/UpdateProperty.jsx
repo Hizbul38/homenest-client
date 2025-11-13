@@ -10,7 +10,6 @@ const UpdateProperty = () => {
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Fetch single property data from MongoDB
   useEffect(() => {
     fetch(`https://homenest-server-lilac.vercel.app/properties/${id}`)
       .then((res) => res.json())
@@ -67,7 +66,6 @@ const UpdateProperty = () => {
       });
   };
 
-  // ✅ Handle Delete
   const handleDelete = () => {
     import("sweetalert2").then((Swal) => {
       Swal.default

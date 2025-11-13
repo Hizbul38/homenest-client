@@ -15,7 +15,6 @@ const PrivateRoute = ({ children }) => {
   }
 
   if (!user) {
-    // 🔸 Login না থাকলে redirect করবে login page এ এবং from হিসেবে বর্তমান route পাঠাবে
     return <Navigate to="/auth/login" state={{ from: location }} replace />;
   }
 

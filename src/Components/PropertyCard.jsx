@@ -16,7 +16,9 @@ const PropertyCard = ({ property }) => {
 
   return (
     <div className="card bg-base-100 shadow-lg hover:shadow-2xl transition duration-300 rounded-xl overflow-hidden">
+      
       {/* Image Section */}
+
       <figure>
         <img
           src={image}
@@ -25,7 +27,9 @@ const PropertyCard = ({ property }) => {
         />
       </figure>
 
+      
       {/* Text Section */}
+
       <div className="card-body">
         <h3 className="card-title text-lg font-semibold text-gray-800">
           {propertyName}
@@ -56,6 +60,7 @@ const PropertyCard = ({ property }) => {
         </div>
 
         {/* Button */}
+        
         <div className="card-actions justify-end mt-4">
           <Link
             to={`/property/${_id}`}

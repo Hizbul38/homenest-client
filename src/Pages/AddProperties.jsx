@@ -21,7 +21,6 @@ const AddProperties = () => {
       createdAt: new Date(),
     };
 
-    // ✅ MongoDB তে property পাঠানো
     fetch("https://homenest-server-lilac.vercel.app/properties", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
