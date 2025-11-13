@@ -12,6 +12,7 @@ import AddProperties from "../Pages/AddProperties";
 import PrivateRoute from "./PrivateRoute";
 import PropertyDetails from "../Components/PropertyDetails";
 import MyProperties from "../Pages/MyProperties";
+import UpdateProperty from "../Pages/UpdateProperty";
 
 const router = createBrowserRouter([
   {
@@ -59,8 +60,17 @@ const router = createBrowserRouter([
           <PrivateRoute>
            <MyProperties></MyProperties>
          </PrivateRoute>
+        ),
+      },
+      {
+         path: "/update-property/:id",
+         element: (
+         <PrivateRoute>
+           <UpdateProperty></UpdateProperty>
+         </PrivateRoute>
   ),
 },
+
     ],
   },
   {
