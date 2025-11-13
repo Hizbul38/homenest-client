@@ -47,7 +47,7 @@ const UpdateProperty = () => {
       userEmail: user?.email,
     };
 
-    fetch(`http://localhost:3000/properties/${id}`, {
+    fetch(`https://homenest-server-lilac.vercel.app/properties/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedProperty),
@@ -82,7 +82,7 @@ const UpdateProperty = () => {
         })
         .then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:3000/properties/${id}`, {
+            fetch(`https://homenest-server-lilac.vercel.app/properties/${id}`, {
               method: "DELETE",
             })
               .then((res) => res.json())

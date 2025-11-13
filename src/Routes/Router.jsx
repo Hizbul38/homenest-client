@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/all-properties",
         element:<AlProperties></AlProperties>,
-        loader:() => fetch('http://localhost:3000/properties')
+        loader:() => fetch('https://homenest-server-lilac.vercel.app/properties')
       },
       {
         path: "/add-properties",
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/properties/${params.id}`),
+          fetch(`https://homenest-server-lilac.vercel.app/properties/${params.id}`),
       },
       {
         path: "/my-properties",
